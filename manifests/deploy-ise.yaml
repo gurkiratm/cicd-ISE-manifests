@@ -17,7 +17,7 @@ spec:
         app: ise-portal
     spec:
       containers:
-      - image: 10.88.19.170:5000/ise_user_portal:8
+      - image: 10.88.19.170:5000/ise_user_portal:9
         name: ise-user-portal-container
         env:
           - name: ADMIN_USER
