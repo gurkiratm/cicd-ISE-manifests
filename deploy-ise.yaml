@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ise-portal
+    type: Deployment
+  name: ise-portal
+  namespace: cicd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ise-portal
+  template:
+    metadata:
+      labels:
+        app: ise-portal
+    spec:
+      containers:
+      - image: 10.88.19.170:5000/ise_user_portal:v7
+        name: ise-user-portal-container
+        env:
+          - name: ADMIN_USER
+            valueFrom:
+              secretKeyRef:
+                name: ise-secrets
+                key: adminuser                
+          - name: ADMIN_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: ise-secrets
+                key: adminpassword
+          - name : BASE_URL
+            valueFrom:
+              secretKeyRef:
+                name: ise-secrets
+                key: baseurl
+        ports:
+        - containerPort: 5001
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
