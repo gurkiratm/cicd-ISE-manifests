@@ -41,7 +41,9 @@ This setup demonstrates modern DevOps practices: **build → push → update man
 
 ## 🏗️ CI/CD → GitOps Flow (Jenkinsfile)
 
-![workflow](workflow.png)
+<p align="center">
+  <img src="assets/workflow.png">
+</p>
 
 1. Developer pushes application code into the source repository  
 2. Jenkins (polling or webhook) triggers the pipeline and checkout source  
@@ -76,8 +78,13 @@ Placeholders in manifest template:
 
 ## 🛠️ Jenkins Configuration Notes
 
-- Create a GitHub credential (Username + PAT) in Jenkins and set ID = `CREDS_ID`
-  - ![credentials](assets/jenkins-credentials.png)
+
+- <details>
+    <summary>📸 Create a GitHub credential (Username + PAT) in Jenkins and set ID = `CREDS_ID`</summary>
+  
+    <img src="assets/jenkins-credentials.png" width="500">
+  </details>
+
 - Agent/node must have:
   - Docker (build + push)
   - Git (clone + commit + push)
