@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ise-portal
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/gurkiratm/cicd-ISE-manifests.git
+    targetRevision: main
+    path: manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cicd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
