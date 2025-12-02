@@ -47,9 +47,9 @@ This setup demonstrates modern DevOps practices: **build → push → update man
 
 1. Developer pushes application code into the source repository  
 2. Jenkins (polling or webhook) triggers the pipeline and checkout source  
-3. Jenkins builds the Docker image and pushes it to the local registry  
-4. Jenkins clones the manifests repo **via raw `git clone`** (to avoid multi-SCM polling)  
-5. Jenkins updates the Deployment YAML with the new image tag and pushes the commit  
+3. Agent builds the Docker image and pushes it to the local registry  
+4. Agent clones the manifests repo **via raw `git clone`** (to avoid multi-SCM polling)  
+5. Agent updates the Deployment YAML with the new image tag and pushes the commit  
 6. Argo CD detects the commit → syncs changes → deploys the updated version
 
 > [!NOTE]
