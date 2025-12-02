@@ -12,6 +12,11 @@ It uses:
 
 This setup demonstrates modern DevOps practices: **build → push → update manifests → GitOps sync → deploy**.
 
+## 🎥 Demo
+<p align="center">
+  <img src="assets/complete-ise-animation.gif">
+</p>
+
 ## 🧰 Tech Stack
 
 <p align="center">
